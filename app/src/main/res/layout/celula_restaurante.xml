@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/foto_restaurante_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/nome_restaurante_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MC Donalds"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/endereco_restaurante_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rua dnadosas"/>
+
+        <TextView
+            android:id="@+id/horario_restaurante_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="até as 22:00"/>
+
+    </LinearLayout>
