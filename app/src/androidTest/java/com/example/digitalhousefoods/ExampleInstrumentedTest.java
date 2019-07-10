@@ -1,4 +1,4 @@
-package com.example.desafioandroid;
+package com.example.digitalhousefoods;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.desafioandroid", appContext.getPackageName());
+        assertEquals("com.example.digitalhousefoods", appContext.getPackageName());
     }
 }

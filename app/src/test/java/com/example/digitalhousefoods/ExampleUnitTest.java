@@ -1,4 +1,4 @@
-package com.example.desafioandroid;
+package com.example.digitalhousefoods;
 
 import org.junit.Test;
 

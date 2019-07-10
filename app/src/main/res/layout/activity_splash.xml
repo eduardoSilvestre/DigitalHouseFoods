@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="@drawable/novo_splash_comida">
+    android:background="@drawable/splash_background">
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

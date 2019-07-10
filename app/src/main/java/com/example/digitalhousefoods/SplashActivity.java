@@ -1,10 +1,12 @@
-package com.example.desafioandroid;
+package com.example.digitalhousefoods;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -13,18 +15,20 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        irParaTelaLogin();
-    }
+        getSupportActionBar().hide();
 
-    private void irParaTelaLogin() {
-        Handler handle = new Handler();
-        handle.postDelayed(new Runnable() {
+        new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(getApplicationContext(),TelaLoginActivity.class);
-                startActivity(intent);
-                finish();
+                irParaLogin();
             }
         }, 2000);
     }
+
+    private void irParaLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+
 }

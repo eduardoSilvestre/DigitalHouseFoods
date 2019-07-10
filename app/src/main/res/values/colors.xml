@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#9E2323</color>
-    <color name="azul_face">#3b5998</color>
-    <color name="outro_azul">#463FA2</color>
-    <color name="branco">#FFFFFF</color>
+    <color name="colorPrimary">@color/Red</color>
+    <color name="colorPrimaryDark">@color/RedDark</color>
+    <color name="colorAccent">#FF5252</color>
+    <color name="Red">#b71c1c</color>
+    <color name="RedDark">#7f0000</color>
+    <color name="LightRed">#f05545</color>
+
+    <color name="blue_facebook">#4267b2</color>
+    <color name="black">#000000</color>
+    <color name="grey">#3F3B3B</color>
+    <color name="light_grey">#918989</color>
+    <color name="ultra_light_grey">#D6D1D1</color>
+    <color name="white">#FFFFFF</color>
 </resources>
