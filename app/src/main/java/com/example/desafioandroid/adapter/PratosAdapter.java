@@ -37,7 +37,7 @@ public class PratosAdapter extends RecyclerView.Adapter<PratosAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Prato prato = listaPratos.get(position);
         holder.imagemPratoImageView.setImageResource(listaPratos.get(position).getImagemPrato());
-        holder.descricaoPratoTextView.setText(listaPratos.get(position).getDescricaoPrato());
+        holder.nomePratoTextView.setText(listaPratos.get(position).getNomePrato());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,13 +61,13 @@ public class PratosAdapter extends RecyclerView.Adapter<PratosAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView imagemPratoImageView;
-        private TextView descricaoPratoTextView;
+        private TextView nomePratoTextView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imagemPratoImageView = itemView.findViewById(R.id.imagem_prato_image_view);
-            descricaoPratoTextView = itemView.findViewById(R.id.descricao_prato_text_view);
+            nomePratoTextView = itemView.findViewById(R.id.nome_prato_text_view);
         }
 
     }

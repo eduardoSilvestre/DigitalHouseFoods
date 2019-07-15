@@ -16,6 +16,7 @@ import com.example.desafioandroid.interfaces.PratosListener;
 import com.example.desafioandroid.models.Prato;
 import com.example.desafioandroid.models.Restaurante;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class PratosActivity extends AppCompatActivity implements PratosListener 
         setContentView(R.layout.activity_pratos);
 
         imagemRestaurante = findViewById(R.id.restaurante_pratos_image_view);
-        nomeRestaurante = findViewById(R.id.descricao_prato_text_view);
+        //nomeRestaurante = findViewById(R.id.descricao_prato_text_view);
 
         Intent intent = getIntent();
 
@@ -39,7 +40,7 @@ public class PratosActivity extends AppCompatActivity implements PratosListener 
 
         Restaurante restaurante = (Restaurante) bundle.getSerializable("RESTAURANTE");
 
-        nomeRestaurante.setText(restaurante.getNomeRestaurante());
+        //nomeRestaurante.setText(restaurante.getNomeRestaurante());
         imagemRestaurante.setImageResource(restaurante.getImagemRestaurante());
 
         listaPratos = restaurante.getListaDePratos();
@@ -56,6 +57,12 @@ public class PratosActivity extends AppCompatActivity implements PratosListener 
     @Override
     public void onPratoClicado(Prato prato) {
         Intent intent = new Intent(this, DetalhePrato.class);
+
+        Bundle bundle = new Bundle();
+
+        bundle.putSerializable("PRATO", prato );
+
+        intent.putExtras(bundle);
 
         startActivity(intent);
     }

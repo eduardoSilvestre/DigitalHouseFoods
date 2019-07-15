@@ -1,6 +1,8 @@
 package com.example.desafioandroid.models;
 
-public class Prato {
+import java.io.Serializable;
+
+public class Prato implements Serializable {
     private int imagemPrato;
     private String nomePrato;
     private String descricaoPrato;

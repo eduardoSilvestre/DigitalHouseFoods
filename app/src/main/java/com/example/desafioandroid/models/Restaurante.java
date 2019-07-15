@@ -12,14 +12,6 @@ public class Restaurante implements Serializable {
     private String horarioRestaurante;
     private List<Prato> listaDePratos = new ArrayList<>();
 
-    public List<Prato> getListaDePratos() {
-        return listaDePratos;
-    }
-
-    public void setListaDePratos(List<Prato> listaDePratos) {
-        this.listaDePratos = listaDePratos;
-    }
-
     public String getNomeRestaurante() {
         return nomeRestaurante;
     }
@@ -50,5 +42,13 @@ public class Restaurante implements Serializable {
 
     public void setHorarioRestaurante(String horarioRestaurante) {
         this.horarioRestaurante = horarioRestaurante;
+    }
+
+    public List<Prato> getListaDePratos() {
+        return listaDePratos;
+    }
+
+    public void setListaDePratos(List<Prato> listaDePratos) {
+        this.listaDePratos = listaDePratos;
     }
 }

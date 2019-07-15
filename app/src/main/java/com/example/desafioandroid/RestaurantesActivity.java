@@ -12,6 +12,7 @@ import com.example.desafioandroid.interfaces.RestaurantesListener;
 import com.example.desafioandroid.models.Prato;
 import com.example.desafioandroid.models.Restaurante;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -143,6 +144,7 @@ public class RestaurantesActivity extends AppCompatActivity implements Restauran
         Intent intent = new Intent(this, PratosActivity.class);
 
         Bundle bundle = new Bundle();
+
         bundle.putSerializable("RESTAURANTE", restaurante);
 
         intent.putExtras(bundle);
