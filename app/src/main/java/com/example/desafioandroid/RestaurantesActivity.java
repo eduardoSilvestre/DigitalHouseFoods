@@ -62,6 +62,11 @@ public class RestaurantesActivity extends AppCompatActivity implements Restauran
     public void onRestauranteClicado(Restaurante restaurante) {
         Intent intent = new Intent(this, PratosActivity.class);
 
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("RESTAURANTE", restaurante);
+
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
 }

@@ -14,6 +14,7 @@ import com.example.desafioandroid.adapter.PratosAdapter;
 import com.example.desafioandroid.adapter.RestaurantesAdapter;
 import com.example.desafioandroid.interfaces.PratosListener;
 import com.example.desafioandroid.models.Prato;
+import com.example.desafioandroid.models.Restaurante;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,19 @@ public class PratosActivity extends AppCompatActivity implements PratosListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pratos);
+
+        imagemRestaurante = findViewById(R.id.foto_restaurante_image_view);
+        nomeRestaurante = findViewById(R.id.nome_restaurante_text_view);
+
+        Intent intent = getIntent();
+
+        Bundle bundle = intent.getExtras();
+
+        Restaurante restaurante = (Restaurante) bundle.getSerializable("RESTAURANTE");
+
+        imagemRestaurante.setImageResource(restaurante.getImagemRestaurante());
+
+        listaPratos = restaurante.getListaDePratos();
 
         List<Prato> listaPratos = new ArrayList<>();
 

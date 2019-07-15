@@ -15,7 +15,7 @@ import com.example.desafioandroid.models.Restaurante;
 
 import java.util.List;
 
-public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapter.ViewHolderRestaurantes> implements RestaurantesListener{
+public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapter.ViewHolderRestaurantes>{
 
     private List<Restaurante> listaRestaurantes;
     private RestaurantesListener restaurantesListener;
@@ -55,10 +55,6 @@ public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapte
         return listaRestaurantes.size();
     }
 
-    @Override
-    public void onRestauranteClicado(Restaurante restaurante) {
-
-    }
 
     class ViewHolderRestaurantes extends RecyclerView.ViewHolder{
 

@@ -69,6 +69,7 @@ public class PratosAdapter extends RecyclerView.Adapter<PratosAdapter.ViewHolder
             imagemPratoImageView = itemView.findViewById(R.id.imagem_prato_image_view);
             descricaoPratoTextView = itemView.findViewById(R.id.descricao_prato_text_view);
         }
+
     }
 
 }
