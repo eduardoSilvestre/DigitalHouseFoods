@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.example.desafioandroid.adapter.RestaurantesAdapter;
 import com.example.desafioandroid.interfaces.RestaurantesListener;
+import com.example.desafioandroid.models.Prato;
 import com.example.desafioandroid.models.Restaurante;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class RestaurantesActivity extends AppCompatActivity implements Restauran
         restaurante1.setEnderecoRestaurante("Rua shinzaburo mizutani");
         restaurante1.setHorarioRestaurante("08:00 as 18:00");
         restaurante1.setImagemRestaurante(R.drawable.tonyromas);
+
         listaRestaurantes.add(restaurante1);
 
         Restaurante restaurante2 = new Restaurante();
@@ -44,6 +46,7 @@ public class RestaurantesActivity extends AppCompatActivity implements Restauran
         restaurante2.setEnderecoRestaurante("Rua shinzaburo mizutani");
         restaurante2.setHorarioRestaurante("08:00 as 18:00");
         restaurante2.setImagemRestaurante(R.drawable.tonyromas);
+
         listaRestaurantes.add(restaurante2);
 
         RestaurantesAdapter restaurantesAdapter = new RestaurantesAdapter(listaRestaurantes, this);

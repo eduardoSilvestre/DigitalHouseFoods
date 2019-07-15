@@ -12,11 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.desafioandroid.R;
 import com.example.desafioandroid.interfaces.RestaurantesListener;
 import com.example.desafioandroid.models.Restaurante;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapter.ViewHolder> implements RestaurantesListener{
+public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapter.ViewHolderRestaurantes> implements RestaurantesListener{
 
     private List<Restaurante> listaRestaurantes;
     private RestaurantesListener restaurantesListener;
@@ -28,22 +27,24 @@ public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapte
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+    public ViewHolderRestaurantes onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.celula_restaurante, viewGroup, false);
 
-        return new ViewHolder(view);
+        return new ViewHolderRestaurantes(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Restaurante restaurante = listaRestaurantes.get(position);
+    public void onBindViewHolder(@NonNull ViewHolderRestaurantes holder, final int position) {
+        holder.nomeRestauranteTextVIew.setText(listaRestaurantes.get(position).getNomeRestaurante());
+        holder.horarioRestauranteTextView.setText(listaRestaurantes.get(position).getHorarioRestaurante());
+        holder.enderecoRestauranteTextView.setText(listaRestaurantes.get(position).getEnderecoRestaurante());
         holder.restauranteImageView.setImageResource(listaRestaurantes.get(position).getImagemRestaurante());
-            holder.setupRestaurante(restaurante);
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    restaurantesListener.onRestauranteClicado(restaurante);
+                    restaurantesListener.onRestauranteClicado(listaRestaurantes.get(position));
                 }
             });
 
@@ -59,28 +60,20 @@ public class RestaurantesAdapter extends RecyclerView.Adapter<RestaurantesAdapte
 
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolderRestaurantes extends RecyclerView.ViewHolder{
 
         private ImageView restauranteImageView;
         private TextView nomeRestauranteTextVIew;
         private TextView enderecoRestauranteTextView;
         private TextView horarioRestauranteTextView;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolderRestaurantes(@NonNull View itemView) {
             super(itemView);
 
             restauranteImageView = itemView.findViewById(R.id.foto_restaurante_image_view);
             nomeRestauranteTextVIew= itemView.findViewById(R.id.nome_restaurante_text_view);
             enderecoRestauranteTextView= itemView.findViewById(R.id.endereco_restaurante_text_view);
             horarioRestauranteTextView= itemView.findViewById(R.id.horario_restaurante_text_view);
-        }
-        public void setupRestaurante(Restaurante restaurante){
-
-
-            nomeRestauranteTextVIew.setText(restaurante.getNomeRestaurante());
-            horarioRestauranteTextView.setText(restaurante.getHorarioRestaurante());
-            enderecoRestauranteTextView.setText(restaurante.getEnderecoRestaurante());
-
         }
     }
 }

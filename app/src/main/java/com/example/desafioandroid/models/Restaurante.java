@@ -1,6 +1,8 @@
 package com.example.desafioandroid.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Restaurante implements Serializable {
 
@@ -8,6 +10,15 @@ public class Restaurante implements Serializable {
     private int imagemRestaurante;
     private String enderecoRestaurante;
     private String horarioRestaurante;
+    private List<Prato> listaDePratos = new ArrayList<>();
+
+    public List<Prato> getListaDePratos() {
+        return listaDePratos;
+    }
+
+    public void setListaDePratos(List<Prato> listaDePratos) {
+        this.listaDePratos = listaDePratos;
+    }
 
     public String getNomeRestaurante() {
         return nomeRestaurante;
