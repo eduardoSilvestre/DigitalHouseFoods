@@ -30,19 +30,6 @@ public class PratosActivity extends AppCompatActivity implements PratosListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pratos);
 
-        imagemRestaurante = findViewById(R.id.foto_restaurante_image_view);
-        nomeRestaurante = findViewById(R.id.nome_restaurante_text_view);
-
-        Intent intent = getIntent();
-
-        Bundle bundle = intent.getExtras();
-
-        Restaurante restaurante = (Restaurante) bundle.getSerializable("RESTAURANTE");
-
-        imagemRestaurante.setImageResource(restaurante.getImagemRestaurante());
-
-        listaPratos = restaurante.getListaDePratos();
-
         List<Prato> listaPratos = new ArrayList<>();
 
         Prato prato = new Prato();
